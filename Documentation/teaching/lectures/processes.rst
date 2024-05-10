@@ -240,7 +240,7 @@ implementation:
 
 Linux uses a different implementation for threads. The basic unit is
 called a task (hence the :c:type:`struct task_struct`) and it is used
-for both tasks and processes. Instead of embedding resources in the
+for both threads and processes. Instead of embedding resources in the
 task structure it has pointers to these resources.
 
 Thus, if two threads are the same process will point to the same
@@ -306,8 +306,8 @@ the parent and which should be copied or isolated:
 
 
 For example, if `CLONE_FILES | CLONE_VM | CLONE_FS` is used by the
-caller than effectively a new thread is created. If these flags are
-not used than a new process is created.
+caller then effectively a new thread is created. If these flags are
+not used then a new process is created.
 
 Namespaces and "containers"
 ---------------------------
